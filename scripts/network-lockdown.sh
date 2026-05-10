@@ -1,21 +1,29 @@
 #!/bin/bash
 
-echo "=================================="
-echo "SENTINELA AI - Docker Status"
-echo "=================================="
+echo "Applying network lockdown rules..."
 
-docker ps
+# Flush old rules
+iptables -F
+iptables -X
 
-echo ""
-echo "=================================="
-echo "Docker Images"
-echo "=================================="
+# Default policies
+iptables -P INPUT DROP
+iptables -P FORWARD DROP
+iptables -P OUTPUT ACCEPT
 
-docker images
+# Allow localhost
+iptables -A INPUT -i lo -j ACCEPT
 
-echo ""
-echo "=================================="
-echo "Docker Networks"
-echo "=================================="
+# Allow established connections
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
 
-docker network ls
+# Allow SSH
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+
+# Allow Open WebUI
+iptables -A INPUT -p tcp --dport 3000 -j ACCEPT
+
+# Allow Ollama API
+iptables -A INPUT -p tcp --dport 11434 -j ACCEPT
+
+echo "Firewall rules applied."
