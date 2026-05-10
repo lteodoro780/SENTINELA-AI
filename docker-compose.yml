@@ -1,24 +1,50 @@
 version: '3.8'
 
 services:
-open-webui:
-image: ghcr.io/open-webui/open-webui:main
-container_name: open-webui
-ports:
-- "3000:8080"
-volumes:
-- open-webui:/app/backend/data
-restart: unless-stopped
 
 ollama:
 image: ollama/ollama
 container_name: ollama
-ports:
-- "11434:11434"
-volumes:
-- ollama:/root/.ollama
 restart: unless-stopped
 
+```
+ports:
+  - "11434:11434"
+
 volumes:
+  - ollama_data:/root/.ollama
+
+networks:
+  - sentinela_network
+```
+
 open-webui:
-ollama:
+image: ghcr.io/open-webui/open-webui:main
+container_name: open-webui
+restart: unless-stopped
+
+```
+depends_on:
+  - ollama
+
+ports:
+  - "3000:8080"
+
+environment:
+  - OLLAMA_BASE_URL=http://ollama:11434
+
+volumes:
+  - openwebui_data:/app/backend/data
+
+networks:
+  - sentinela_network
+```
+
+volumes:
+ollama_data:
+openwebui_data:
+
+networks:
+sentinela_network:
+driver: bridge
+
