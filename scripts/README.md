@@ -2,10 +2,11 @@
 
 This directory stores automation scripts for the SENTINELA AI environment.
 
-Planned scripts:
+## Available Scripts
 
-- start.sh
-- stop.sh
-- update.sh
-- backup.sh
-- restore.sh
+- `start.sh` - Starts the environment
+- `stop.sh` - Stops the environment
+- `update.sh` - Updates containers
+- `backup.sh` - Creates volume backups
+- `docker-status.sh` - Shows Docker status
+- `network-lockdown.sh` - Applies firewall isolation rules
