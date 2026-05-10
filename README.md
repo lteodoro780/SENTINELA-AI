@@ -53,3 +53,10 @@ The environment can be deployed using Docker Compose on Debian-based systems.
 * Support restricted enterprise networks
 * Reduce dependency on cloud services
 * Simplify AI deployment for internal environments
+
+  ## Security Features
+
+- Internal-only deployment
+- Optional network lockdown scripts
+- Firewall isolation support
+- LAN-restricted AI environment
