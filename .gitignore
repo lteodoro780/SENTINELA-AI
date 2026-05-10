@@ -1,0 +1,23 @@
+# Backups
+backups/
+*.tar
+*.tar.gz
+
+# Environment files
+.env
+*.env
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
