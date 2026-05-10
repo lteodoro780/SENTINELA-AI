@@ -1,4 +1,11 @@
 # SENTINELA AI
+![Linux](https://img.shields.io/badge/Linux-Debian-red)
+![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
+![Status](https://img.shields.io/badge/Status-Development-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Offline](https://img.shields.io/badge/Mode-Offline-important)
+![Infrastructure](https://img.shields.io/badge/Focus-Infrastructure-lightgrey)
+
 
 Offline AI environment focused on enterprise and laboratory deployments using open-source technologies.
 
