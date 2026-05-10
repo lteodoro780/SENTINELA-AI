@@ -67,3 +67,16 @@ The environment can be deployed using Docker Compose on Debian-based systems.
 - Optional network lockdown scripts
 - Firewall isolation support
 - LAN-restricted AI environment
+
+  ## Repository Structure
+
+```text
+sentinela-ai/
+├── configs/
+├── docs/
+├── images/
+├── scripts/
+├── docker-compose.yml
+├── README.md
+├── LICENSE
+└── .gitignore
