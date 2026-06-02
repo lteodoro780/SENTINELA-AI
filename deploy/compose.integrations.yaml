@@ -1,0 +1,27 @@
+services:
+  openapi-glpi:
+    build:
+      context: ../services/openapi-glpi
+    container_name: sentinela-openapi-glpi
+    restart: unless-stopped
+    ports:
+      - "${GLPI_TOOLS_PORT:-5051}:8000"
+    environment:
+      GLPI_URL: "${GLPI_URL}"
+      GLPI_APP_TOKEN: "${GLPI_APP_TOKEN}"
+      GLPI_USER_TOKEN: "${GLPI_USER_TOKEN}"
+      VERIFY_SSL: "${VERIFY_SSL:-true}"
+      TIMEOUT_SECONDS: "${TIMEOUT_SECONDS:-20}"
+
+  openapi-zabbix:
+    build:
+      context: ../services/openapi-zabbix
+    container_name: sentinela-openapi-zabbix
+    restart: unless-stopped
+    ports:
+      - "${ZABBIX_TOOLS_PORT:-5052}:8000"
+    environment:
+      ZABBIX_URL: "${ZABBIX_URL}"
+      ZABBIX_API_TOKEN: "${ZABBIX_API_TOKEN}"
+      VERIFY_SSL: "${VERIFY_SSL:-true}"
+      TIMEOUT_SECONDS: "${TIMEOUT_SECONDS:-20}"
