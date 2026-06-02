@@ -1,25 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-BACKUP_DIR="./backups"
-DATE=$(date +"%Y-%m-%d_%H-%M-%S")
+BACKUP_DIR="${BACKUP_DIR:-backups}"
+DATE="$(date +%Y%m%d-%H%M%S)"
 
 mkdir -p "$BACKUP_DIR"
 
-echo "Creating backup directory: $BACKUP_DIR"
-
-echo "Backing up Open WebUI data..."
+echo "Gerando backup dos volumes Docker..."
 docker run --rm \
-  -v sentinela-ai_openwebui_data:/volume \
+  -v sentinela-ai_openwebui_data:/openwebui_data:ro \
+  -v sentinela-ai_ollama_data:/ollama_data:ro \
   -v "$(pwd)/$BACKUP_DIR":/backup \
-  ubuntu \
-  tar czf "/backup/openwebui-data-$DATE.tar.gz" -C /volume .
+  alpine sh -c "tar czf /backup/sentinela-ai-$DATE.tar.gz /openwebui_data /ollama_data"
 
-echo "Backing up Ollama data..."
-docker run --rm \
-  -v sentinela-ai_ollama_data:/volume \
-  -v "$(pwd)/$BACKUP_DIR":/backup \
-  ubuntu \
-  tar czf "/backup/ollama-data-$DATE.tar.gz" -C /volume .
-
-echo "Backup completed."
-echo "Files saved in: $BACKUP_DIR"
+echo "Backup criado em: $BACKUP_DIR/sentinela-ai-$DATE.tar.gz"
