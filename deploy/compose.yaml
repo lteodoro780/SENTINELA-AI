@@ -1,0 +1,28 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: sentinela-ollama
+    restart: unless-stopped
+    ports:
+      - "${OLLAMA_PORT:-11434}:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: sentinela-open-webui
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    ports:
+      - "${OPEN_WEBUI_PORT:-3000}:8080"
+    environment:
+      OLLAMA_BASE_URL: "http://ollama:11434"
+      WEBUI_SECRET_KEY: "${WEBUI_SECRET_KEY}"
+      ENABLE_RAG_HYBRID_SEARCH: "${ENABLE_RAG_HYBRID_SEARCH:-true}"
+    volumes:
+      - openwebui_data:/app/backend/data
+
+volumes:
+  ollama_data:
+  openwebui_data:

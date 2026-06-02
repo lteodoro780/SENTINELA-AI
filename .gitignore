@@ -1,23 +1,39 @@
-# Backups
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Docker / deploy
+.env
+.env.*
+!.env.example
 backups/
+data/
+volumes/
 *.tar
 *.tar.gz
-
-# Environment files
-.env
-*.env
+*.bak
+*.sql
+*.dump
 
 # Logs
 *.log
+logs/
 
-# Temporary files
-tmp/
-temp/
-
-# System files
+# IDE / OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
 
-# Editor files
-.vscode/
-.idea/
+# Secrets
+*.pem
+*.key
+*.p12
+*.crt
+secrets/
+tokens.json
+config.local.*

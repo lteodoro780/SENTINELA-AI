@@ -1,0 +1,33 @@
+name: Bug report
+description: Reporte de falha técnica
+title: "[bug] "
+labels: ["bug"]
+
+body:
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: O que você estava tentando fazer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs sanitizados
+      description: Remova senhas, tokens, IPs reais e nomes internos antes de colar.
