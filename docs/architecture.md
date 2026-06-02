@@ -1,113 +1,38 @@
-# Architecture
+# Arquitetura do SENTINELA-AI
 
-## Overview
+## Objetivo
 
-SENTINELA AI is a self-hosted AI environment designed for enterprise and laboratory deployments.
+O SENTINELA-AI foi pensado como um stack local de IA para apoiar infraestrutura de TI, suporte técnico e operação em redes restritas.
 
-The project architecture focuses on:
+## Componentes
 
-* Offline operation
-* Modular containerized services
-* Lightweight deployment
-* Internal document processing
-* LAN-based access
+| Componente | Função |
+|---|---|
+| Open WebUI | Interface web e orquestração de conversas |
+| Ollama | Execução local de modelos de linguagem |
+| RAG local | Consulta a documentos técnicos sanitizados |
+| Tool Server GLPI | Integração futura com chamados |
+| Tool Server Zabbix | Integração futura com monitoramento |
 
----
+## Fluxo básico
 
-## Core Components
-
-### Open WebUI
-
-Responsible for:
-
-* Web interface
-* User interaction
-* Chat management
-* Model selection
-
-Runs as a Docker container.
-
----
-
-### Ollama
-
-Responsible for:
-
-* Local model inference
-* LLM execution
-* Model management
-
-Models are stored locally on the server.
-
----
-
-## Container Architecture
-
-```text id="g5gnq0"
-Client Browser
-       │
-       ▼
-Open WebUI Container
-       │
-       ▼
-Ollama API Container
-       │
-       ▼
-Local AI Models
+```text
+Usuário -> Open WebUI -> Ollama
+                 |
+                 +-> Base RAG local
+                 +-> API GLPI
+                 +-> API Zabbix
 ```
 
----
+## Portas padrão
 
-## Deployment Model
+| Serviço | Porta |
+|---|---|
+| Open WebUI | 3000 |
+| Ollama | 11434 |
 
-The environment was designed to support:
+## Observações de segurança
 
-* Standalone servers
-* Laboratory environments
-* Enterprise internal networks
-* Low-cost infrastructure
-* Offline operation
-
----
-
-## Storage
-
-Persistent Docker volumes are used for:
-
-* Model storage
-* User data
-* Chat history
-* Configuration files
-
----
-
-## Security Design
-
-Recommended practices:
-
-* Internal-only deployment
-* Dedicated VLANs
-* Firewall isolation
-* Restricted SSH access
-* No direct internet exposure
-
----
-
-## Scalability
-
-The project can be expanded using:
-
-* Reverse proxy
-* External databases
-* Additional AI models
-* Distributed inference servers
-
----
-
-## Future Goals
-
-* Document-based RAG support
-* Centralized authentication
-* Multi-user environments
-* Enterprise deployment automation
-* ARM-based deployments
+- Em produção, restrinja o acesso por firewall.
+- Não exponha Ollama ou Open WebUI diretamente na internet sem autenticação e proxy reverso seguro.
+- Use dados fictícios na documentação pública.
