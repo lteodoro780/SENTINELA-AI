@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/github-banner-luiz-teodoro-pro.png" alt="Luiz Teodoro - Infrastructure, Linux and Automation Labs" />
+</p>
+
 # Luiz Teodoro | tluizlabs
 
 **Infraestrutura de TI • Linux • Redes • Automação • Monitoramento • IA Local • Sistemas Embarcados**
