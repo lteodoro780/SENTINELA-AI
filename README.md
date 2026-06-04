@@ -1,114 +1,177 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lteodoro780/lteodoro780/main/assets/banner-tluizlabs.png" alt="Luiz Teodoro - Infrastructure, Linux and Automation Labs" />
-</p>
+# SENTINELA-AI
 
-# Luiz Teodoro | tluizlabs
-
-**Infraestrutura de TI • Linux • Redes • Automação • Monitoramento • IA Local • Sistemas Embarcados**
-
-Sou profissional de Infraestrutura de TI com experiência prática em suporte técnico, servidores Linux/Windows, redes, automação, monitoramento e projetos de reaproveitamento tecnológico.
-
-Tenho foco em soluções funcionais, ambientes locais, baixo custo operacional e melhoria contínua de processos de TI. Gosto de transformar hardware esquecido em laboratório útil — porque, às vezes, o servidor nasce onde alguém só viu uma TV Box parada.
-
----
-
-## Áreas de atuação
-
-- Infraestrutura de TI e suporte técnico
-- Linux Server e Linux Desktop
-- Windows Server, Active Directory e GPO
-- Redes, troubleshooting e documentação técnica
-- GLPI, OCS Inventory e Zabbix
-- Docker, automação e scripts
-- IA local com Ollama, Open WebUI e modelos offline
-- Sistemas embarcados e reaproveitamento de TV Boxes
-
----
-
-## Projetos em destaque
-
-### [Vanguardeira Project](https://github.com/lteodoro780/vanguardeira-project)
-
-Projeto voltado ao reaproveitamento de TV Boxes como computadores Linux para ambiente educacional, laboratório técnico e uso institucional.
-
-**Destaques:**
-
-- Reaproveitamento de hardware ARM
-- Testes com Armbian, Debian ARM64 e Linux embarcado
-- Experimentos com Amlogic S905X4 e Rockchip RK322x
-- Documentação de instalação em eMMC, boot por SD e validação de hardware
-
-**Tecnologias:** `Armbian` `Debian ARM64` `Linux` `Amlogic` `Rockchip` `eMMC` `Embedded Linux`
-
----
-
-### [SENTINELA-AI](https://github.com/lteodoro780/SENTINELA-AI)
-
-Assistente de IA local voltado para apoio à infraestrutura de TI, suporte técnico, bases documentais internas e integração com ferramentas como GLPI e Zabbix.
-
-**Destaques:**
-
-- Ambiente self-hosted
-- Uso com modelos locais via Ollama
-- Base documental com RAG
-- Integrações planejadas com GLPI e Zabbix
-- Foco em redes restritas e privacidade
-
-**Tecnologias:** `Docker` `Ollama` `Open WebUI` `Python` `FastAPI` `RAG` `Linux`
-
----
-
-### [Infra TI Labs](https://github.com/lteodoro780/infra-ti-labs)
-
-Laboratórios e documentações práticas sobre infraestrutura de TI, redes, servidores, automação e monitoramento.
-
-**Tecnologias:** `Debian` `Ubuntu` `Zabbix` `GLPI` `OCS Inventory` `Shell Script` `PowerShell` `Windows Server`
-
----
-
-### [Hermes Security Portable](https://github.com/lteodoro780/hermes-security-portable)
-
-Assistente portátil de IA local para diagnóstico defensivo de infraestrutura, suporte técnico e uso offline com modelos GGUF.
-
-**Tecnologias:** `Python` `llama.cpp` `GGUF` `IA Local` `Windows` `Offline-first`
-
----
-
-## Stack e ferramentas
+> Assistente local de IA para apoio à infraestrutura de TI, suporte técnico, documentação interna e automação operacional.
 
 ![Linux](https://img.shields.io/badge/Linux-333?style=for-the-badge&logo=linux)
-![Debian](https://img.shields.io/badge/Debian-333?style=for-the-badge&logo=debian)
-![Ubuntu](https://img.shields.io/badge/Ubuntu-333?style=for-the-badge&logo=ubuntu)
 ![Docker](https://img.shields.io/badge/Docker-333?style=for-the-badge&logo=docker)
 ![Python](https://img.shields.io/badge/Python-333?style=for-the-badge&logo=python)
-![PowerShell](https://img.shields.io/badge/PowerShell-333?style=for-the-badge&logo=powershell)
-![Zabbix](https://img.shields.io/badge/Zabbix-333?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/FastAPI-333?style=for-the-badge&logo=fastapi)
+![Ollama](https://img.shields.io/badge/Ollama-333?style=for-the-badge)
 ![GLPI](https://img.shields.io/badge/GLPI-333?style=for-the-badge)
-![Windows Server](https://img.shields.io/badge/Windows%20Server-333?style=for-the-badge&logo=windows)
-![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github)
+![Zabbix](https://img.shields.io/badge/Zabbix-333?style=for-the-badge)
+![Local AI](https://img.shields.io/badge/Local%20AI-333?style=for-the-badge)
 
 ---
 
-## Atualmente estudando e desenvolvendo
+## Visão geral
 
-- Automação de infraestrutura
-- Integração entre IA local, GLPI e Zabbix
-- Linux embarcado em dispositivos ARM
-- Monitoramento e observabilidade
-- Virtualização e ambientes offline
-- Padronização de documentação técnica para portfólio
+O **SENTINELA-AI** é um projeto de assistente local de inteligência artificial voltado para ambientes de infraestrutura de TI. A proposta é centralizar consultas técnicas, documentação interna, apoio a chamados, monitoramento e automações em uma solução privada, executada em ambiente controlado.
+
+O projeto nasceu como laboratório prático para integrar IA local com rotinas reais de suporte técnico, especialmente em cenários onde privacidade, rede restrita e operação offline são importantes.
 
 ---
 
-## Objetivo do perfil
+## Objetivo
 
-Este GitHub funciona como laboratório e portfólio técnico, reunindo projetos reais, estudos, scripts e documentações voltadas para infraestrutura de TI, Linux, automação e uso prático de IA local.
+Criar um assistente técnico capaz de auxiliar profissionais de TI em tarefas como:
 
-A ideia é registrar não só o resultado final, mas também o processo: problema, teste, erro, correção e solução.
+- Consultar documentação interna.
+- Apoiar análise de chamados.
+- Consultar informações de ativos e serviços.
+- Integrar dados de ferramentas como **GLPI**, **Zabbix** e **Grafana**.
+- Automatizar respostas e ações operacionais.
+- Disponibilizar atendimento interno via interfaces como Web, API ou Telegram.
 
 ---
 
-## Contato
+## Principais recursos
+
+- Execução local/self-hosted.
+- Integração com modelos locais via **Ollama**.
+- Base documental com suporte a RAG.
+- API para consultas e automações.
+- Possibilidade de integração com GLPI.
+- Possibilidade de integração com Zabbix.
+- Fluxo de uso interno via Telegram para técnicos.
+- Foco em privacidade e redes restritas.
+- Documentação voltada para ambientes reais de infraestrutura.
+
+---
+
+## Arquitetura proposta
+
+```text
+Usuário / Técnico
+      |
+      | Web UI / Telegram / API
+      v
+SENTINELA-AI
+      |
+      |-- Modelo local via Ollama
+      |-- Base documental / RAG
+      |-- API interna em Python/FastAPI
+      |-- Integração GLPI
+      |-- Integração Zabbix
+      |-- Dashboards e informações operacionais
+```
+
+---
+
+## Tecnologias utilizadas
+
+| Área | Tecnologias |
+|---|---|
+| IA local | Ollama, modelos locais, RAG |
+| Backend | Python, FastAPI |
+| Infraestrutura | Linux, Docker |
+| Monitoramento | Zabbix, Grafana |
+| ITSM / Chamados | GLPI |
+| Interface | Open WebUI, Telegram Bot, API HTTP |
+| Automação | Scripts, endpoints internos, integrações |
+
+---
+
+## Casos de uso
+
+### Suporte técnico interno
+
+O assistente pode ser usado para orientar técnicos em procedimentos, comandos, soluções conhecidas e documentação de ambiente.
+
+### Apoio a chamados
+
+Com integração ao GLPI, o projeto pode ajudar na consulta, análise e registro de soluções de chamados.
+
+### Monitoramento operacional
+
+Com integração ao Zabbix e Grafana, o assistente pode consultar alertas, hosts, disponibilidade e informações relevantes da infraestrutura.
+
+### Base de conhecimento privada
+
+Documentos internos podem ser utilizados como fonte de consulta sem depender de serviços externos.
+
+---
+
+## Status do projeto
+
+Projeto em desenvolvimento e evolução contínua.
+
+### Já desenvolvido / em teste
+
+- Ambiente local com IA.
+- Estrutura inicial de assistente técnico.
+- Testes com bases documentais.
+- Testes de integração com ferramentas de infraestrutura.
+- Uso interno voltado a técnicos.
+
+### Próximos passos
+
+- Padronizar estrutura de API.
+- Melhorar documentação de instalação.
+- Criar exemplos de integração com GLPI.
+- Criar exemplos de integração com Zabbix.
+- Adicionar prints e diagramas sem dados sensíveis.
+- Criar fluxo de Telegram para uso técnico interno.
+- Separar documentação em arquivos dentro de `docs/`.
+
+---
+
+## Estrutura sugerida do projeto
+
+```text
+SENTINELA-AI/
+├── README.md
+├── app/
+│   ├── main.py
+│   ├── routes/
+│   ├── services/
+│   └── integrations/
+├── docs/
+│   ├── architecture.md
+│   ├── installation.md
+│   ├── glpi-integration.md
+│   ├── zabbix-integration.md
+│   ├── telegram-bot.md
+│   └── security-notes.md
+├── scripts/
+├── examples/
+└── docker-compose.yml
+```
+
+---
+
+## Segurança e privacidade
+
+Este projeto é pensado para uso interno e controlado. Ao publicar prints, exemplos ou documentações, é importante remover ou mascarar:
+
+- IPs internos.
+- Hostnames reais.
+- Domínios corporativos.
+- Usuários e senhas.
+- Tokens de API.
+- Dados de chamados.
+- Nomes de servidores e ativos sensíveis.
+
+---
+
+## Observação
+
+Este repositório faz parte de um laboratório pessoal/profissional de infraestrutura, automação e IA local. O objetivo é documentar o processo de aprendizado e desenvolvimento, incluindo testes, erros, correções e melhorias.
+
+---
+
+## Autor
+
+**Luiz Teodoro**  
+Infraestrutura de TI • Linux • Automação • Monitoramento • IA Local
 
 - GitHub: [@lteodoro780](https://github.com/lteodoro780)
-- E-mail: lteodoro780@gmail.com
