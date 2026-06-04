@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/github-banner-luiz-teodoro-pro.png" alt="Luiz Teodoro - Infrastructure, Linux and Automation Labs" />
+  <img src="assets/banner-tluizlabs.png" alt="Luiz Teodoro - Infrastructure, Linux and Automation Labs" />
 </p>
 
 # Luiz Teodoro | tluizlabs
