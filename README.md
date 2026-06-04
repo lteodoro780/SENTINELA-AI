@@ -1,208 +1,110 @@
-# SENTINELA-AI
+# Luiz Teodoro | tluizlabs
 
-![status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-![stack](https://img.shields.io/badge/stack-Docker%20%7C%20Ollama%20%7C%20Open%20WebUI-blue)
-![license](https://img.shields.io/badge/license-MIT-green)
+**Infraestrutura de TI • Linux • Redes • Automação • Monitoramento • IA Local • Sistemas Embarcados**
 
-Assistente de IA self-hosted para apoio à infraestrutura de TI, suporte técnico e operação em redes restritas, com foco em uso local, privacidade, automação e integração com ferramentas como GLPI, Zabbix e bases documentais internas.
+Sou profissional de Infraestrutura de TI com experiência prática em suporte técnico, servidores Linux/Windows, redes, automação, monitoramento e projetos de reaproveitamento tecnológico.
 
-> Este repositório usa exemplos fictícios e sanitizados. Não publique IPs reais, senhas, tokens, nomes internos de servidores ou dados institucionais sensíveis.
+Tenho foco em soluções funcionais, ambientes locais, baixo custo operacional e melhoria contínua de processos de TI. Gosto de transformar hardware esquecido em laboratório útil — porque, às vezes, o servidor nasce onde alguém só viu uma TV Box parada.
 
 ---
 
-## Visão geral
+## Áreas de atuação
 
-O **SENTINELA-AI** é um projeto de laboratório e portfólio voltado para criar um ambiente local de IA para:
-
-- consultar documentações técnicas;
-- apoiar atendimento e triagem de chamados;
-- integrar dados de monitoramento e inventário;
-- usar modelos locais com Ollama;
-- rodar em ambiente LAN-only ou offline-first;
-- reduzir dependência de serviços externos.
-
----
-
-## Casos de uso
-
-- Assistente interno para Service Desk.
-- Consulta rápida a runbooks e bases de conhecimento.
-- Apoio a troubleshooting de Linux, redes, GLPI, Zabbix e Windows Server.
-- Integração futura com APIs de GLPI e Zabbix.
-- Automação assistida para rotinas de infraestrutura.
+- Infraestrutura de TI e suporte técnico
+- Linux Server e Linux Desktop
+- Windows Server, Active Directory e GPO
+- Redes, troubleshooting e documentação técnica
+- GLPI, OCS Inventory e Zabbix
+- Docker, automação e scripts
+- IA local com Ollama, Open WebUI e modelos offline
+- Sistemas embarcados e reaproveitamento de TV Boxes
 
 ---
 
-## Arquitetura
+## Projetos em destaque
 
-```mermaid
-flowchart LR
-    U[Usuário LAN] --> W[Open WebUI]
-    W --> O[Ollama]
-    W --> R[RAG local]
-    W --> G[Tool Server GLPI]
-    W --> Z[Tool Server Zabbix]
+### [Vanguardeira Project](https://github.com/lteodoro780/vanguardeira-project)
 
-    R --> KB[(Documentos sanitizados)]
-    G --> GLPI[GLPI REST API]
-    Z --> ZBX[Zabbix API]
+Projeto voltado ao reaproveitamento de TV Boxes como computadores Linux para ambiente educacional, laboratório técnico e uso institucional.
 
-    subgraph Host local
-      W
-      O
-      R
-      G
-      Z
-    end
-```
+**Destaques:**
+
+- Reaproveitamento de hardware ARM
+- Testes com Armbian, Debian ARM64 e Linux embarcado
+- Experimentos com Amlogic S905X4 e Rockchip RK322x
+- Documentação de instalação em eMMC, boot por SD e validação de hardware
+
+**Tecnologias:** `Armbian` `Debian ARM64` `Linux` `Amlogic` `Rockchip` `eMMC` `Embedded Linux`
 
 ---
 
-## Stack principal
+### [SENTINELA-AI](https://github.com/lteodoro780/SENTINELA-AI)
 
-- **Docker / Docker Compose**
-- **Open WebUI**
-- **Ollama**
-- **Linux Server**
-- **RAG com documentos locais**
-- **GLPI API** em desenvolvimento
-- **Zabbix API** em desenvolvimento
-- **Shell Script**
-- **Python / FastAPI** planejado para tool servers
+Assistente de IA local voltado para apoio à infraestrutura de TI, suporte técnico, bases documentais internas e integração com ferramentas como GLPI e Zabbix.
 
----
+**Destaques:**
 
-## Quick start
+- Ambiente self-hosted
+- Uso com modelos locais via Ollama
+- Base documental com RAG
+- Integrações planejadas com GLPI e Zabbix
+- Foco em redes restritas e privacidade
 
-Clone o repositório:
-
-```bash
-git clone https://github.com/lteodoro780/SENTINELA-AI.git
-cd SENTINELA-AI
-```
-
-Crie o arquivo de ambiente:
-
-```bash
-cp deploy/.env.example deploy/.env
-```
-
-Edite as variáveis:
-
-```bash
-nano deploy/.env
-```
-
-Suba o ambiente:
-
-```bash
-docker compose -f deploy/compose.yaml up -d
-```
-
-Verifique:
-
-```bash
-docker compose -f deploy/compose.yaml ps
-```
-
-Acesse:
-
-```text
-http://localhost:3000
-```
+**Tecnologias:** `Docker` `Ollama` `Open WebUI` `Python` `FastAPI` `RAG` `Linux`
 
 ---
 
-## Estrutura do projeto
+### [Infra TI Labs](https://github.com/lteodoro780/infra-ti-labs)
 
-```text
-SENTINELA-AI/
-├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   └── workflows/
-├── deploy/
-│   ├── compose.yaml
-│   └── .env.example
-├── docs/
-│   ├── architecture.md
-│   ├── env-and-secrets.md
-│   ├── rag.md
-│   ├── deployment/
-│   └── integrations/
-├── scripts/
-├── services/
-│   ├── openapi-glpi/
-│   └── openapi-zabbix/
-├── README.md
-├── CHANGELOG.md
-├── SECURITY.md
-├── CONTRIBUTING.md
-└── LICENSE
-```
+Laboratórios e documentações práticas sobre infraestrutura de TI, redes, servidores, automação e monitoramento.
+
+**Tecnologias:** `Debian` `Ubuntu` `Zabbix` `GLPI` `OCS Inventory` `Shell Script` `PowerShell` `Windows Server`
 
 ---
 
-## Documentação
+### [Hermes Security Portable](https://github.com/lteodoro780/hermes-security-portable)
 
-- [Arquitetura](docs/architecture.md)
-- [Deploy com Docker Compose](docs/deployment/compose.md)
-- [Variáveis e segredos](docs/env-and-secrets.md)
-- [RAG e base documental](docs/rag.md)
-- [Integração GLPI](docs/integrations/glpi.md)
-- [Integração Zabbix](docs/integrations/zabbix.md)
+Assistente portátil de IA local para diagnóstico defensivo de infraestrutura, suporte técnico e uso offline com modelos GGUF.
+
+**Tecnologias:** `Python` `llama.cpp` `GGUF` `IA Local` `Windows` `Offline-first`
 
 ---
 
-## Segurança
+## Stack e ferramentas
 
-Este projeto pode lidar com informações sensíveis em ambientes reais. Por isso:
-
-- não versione `.env`;
-- não publique tokens de API;
-- não publique IPs internos reais;
-- não publique nomes reais de servidores;
-- não publique dumps de banco;
-- não publique inventário institucional real;
-- use dados fictícios nos exemplos.
-
-Veja também: [SECURITY.md](SECURITY.md)
-
----
-
-## Roadmap
-
-### 0.2.0 - Higiene do repositório
-
-- [x] Reestruturação inicial.
-- [x] README profissional.
-- [x] Compose limpo.
-- [x] Templates de issue e PR.
-- [x] Política de segurança.
-- [ ] CI com validação de scripts e Compose.
-- [ ] Sanitização completa do histórico.
-
-### 0.3.0 - Tool server GLPI
-
-- [ ] Serviço FastAPI para consultar chamados.
-- [ ] Exemplo de autenticação via token.
-- [ ] Testes unitários.
-- [ ] Documentação de endpoints.
-
-### 0.4.0 - Tool server Zabbix
-
-- [ ] Serviço FastAPI para consultar hosts.
-- [ ] Consulta de grupos, hosts e interfaces.
-- [ ] Testes unitários.
-- [ ] Documentação de endpoints.
+![Linux](https://img.shields.io/badge/Linux-333?style=for-the-badge&logo=linux)
+![Debian](https://img.shields.io/badge/Debian-333?style=for-the-badge&logo=debian)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-333?style=for-the-badge&logo=ubuntu)
+![Docker](https://img.shields.io/badge/Docker-333?style=for-the-badge&logo=docker)
+![Python](https://img.shields.io/badge/Python-333?style=for-the-badge&logo=python)
+![PowerShell](https://img.shields.io/badge/PowerShell-333?style=for-the-badge&logo=powershell)
+![Zabbix](https://img.shields.io/badge/Zabbix-333?style=for-the-badge)
+![GLPI](https://img.shields.io/badge/GLPI-333?style=for-the-badge)
+![Windows Server](https://img.shields.io/badge/Windows%20Server-333?style=for-the-badge&logo=windows)
+![GitHub](https://img.shields.io/badge/GitHub-333?style=for-the-badge&logo=github)
 
 ---
 
-## Autor
+## Atualmente estudando e desenvolvendo
 
-Desenvolvido por [@lteodoro780](https://github.com/lteodoro780), com foco em infraestrutura de TI, automação, Linux, redes, monitoramento e IA local.
+- Automação de infraestrutura
+- Integração entre IA local, GLPI e Zabbix
+- Linux embarcado em dispositivos ARM
+- Monitoramento e observabilidade
+- Virtualização e ambientes offline
+- Padronização de documentação técnica para portfólio
 
 ---
 
-## Licença
+## Objetivo do perfil
 
-Este projeto está licenciado sob a licença MIT.
+Este GitHub funciona como laboratório e portfólio técnico, reunindo projetos reais, estudos, scripts e documentações voltadas para infraestrutura de TI, Linux, automação e uso prático de IA local.
+
+A ideia é registrar não só o resultado final, mas também o processo: problema, teste, erro, correção e solução.
+
+---
+
+## Contato
+
+- GitHub: [@lteodoro780](https://github.com/lteodoro780)
+- E-mail: lteodoro780@gmail.com
