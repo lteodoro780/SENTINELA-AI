@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="./assets/sentinela-ascii.gif" width="850" alt="Sentinela Local Agent ASCII Banner">
-</p>
+<div align="center">
 
-<h1 align="center">Hi, I'm Luis Teodoro 👋</h1>
+# Luis Teodoro
 
-<p align="center">
-  IT Infrastructure • Linux • Monitoring • Automation • Local AI
-</p>
+### IT Infrastructure • Linux • Monitoring • Automation • Local AI
+
+Turning practical infrastructure problems into documented labs, automations and self-hosted solutions.
+
+</div>
 
 ---
 
@@ -14,9 +14,21 @@
 
 I'm an IT Infrastructure professional focused on Linux, networks, monitoring, automation and local AI solutions.
 
-I work with practical infrastructure projects involving Linux servers, GLPI, Zabbix, Docker, automation scripts and self-hosted tools.
+I work with practical infrastructure projects involving Linux servers, Docker, GLPI, Zabbix, Grafana, Active Directory, automation scripts and self-hosted tools.
 
-Currently building **Sentinela Local Agent**, a local AI assistant designed to support technical teams with diagnostics, documentation, monitoring and internal support workflows.
+My focus is building useful, low-cost and realistic solutions for technical support, monitoring, documentation and infrastructure operations.
+
+---
+
+## Main areas
+
+- Linux servers and services.
+- Network and infrastructure troubleshooting.
+- Monitoring with Zabbix and Grafana.
+- ITSM and support workflows with GLPI.
+- Automation with Python, scripts and APIs.
+- Local AI, Ollama and private assistants.
+- Reuse of low-cost hardware for real-world projects.
 
 ---
 
@@ -58,6 +70,7 @@ Repository: [hermes-security-portable](https://github.com/lteodoro780/hermes-sec
   <img src="https://img.shields.io/badge/Zabbix-333?style=for-the-badge" />
   <img src="https://img.shields.io/badge/GLPI-333?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Grafana-333?style=for-the-badge&logo=grafana" />
+  <img src="https://img.shields.io/badge/Active%20Directory-333?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Ollama-333?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Local%20AI-333?style=for-the-badge" />
 </p>
