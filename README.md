@@ -1,177 +1,81 @@
-# SENTINELA-AI
+<p align="center">
+  <img src="./assets/sentinela-ascii.gif" width="850" alt="Sentinela Local Agent ASCII Banner">
+</p>
 
-> Assistente local de IA para apoio à infraestrutura de TI, suporte técnico, documentação interna e automação operacional.
+<h1 align="center">Hi, I'm Luis Teodoro 👋</h1>
 
-![Linux](https://img.shields.io/badge/Linux-333?style=for-the-badge&logo=linux)
-![Docker](https://img.shields.io/badge/Docker-333?style=for-the-badge&logo=docker)
-![Python](https://img.shields.io/badge/Python-333?style=for-the-badge&logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-333?style=for-the-badge&logo=fastapi)
-![Ollama](https://img.shields.io/badge/Ollama-333?style=for-the-badge)
-![GLPI](https://img.shields.io/badge/GLPI-333?style=for-the-badge)
-![Zabbix](https://img.shields.io/badge/Zabbix-333?style=for-the-badge)
-![Local AI](https://img.shields.io/badge/Local%20AI-333?style=for-the-badge)
+<p align="center">
+  IT Infrastructure • Linux • Monitoring • Automation • Local AI
+</p>
 
 ---
 
-## Visão geral
+## About me
 
-O **SENTINELA-AI** é um projeto de assistente local de inteligência artificial voltado para ambientes de infraestrutura de TI. A proposta é centralizar consultas técnicas, documentação interna, apoio a chamados, monitoramento e automações em uma solução privada, executada em ambiente controlado.
+I'm an IT Infrastructure professional focused on Linux, networks, monitoring, automation and local AI solutions.
 
-O projeto nasceu como laboratório prático para integrar IA local com rotinas reais de suporte técnico, especialmente em cenários onde privacidade, rede restrita e operação offline são importantes.
+I work with practical infrastructure projects involving Linux servers, GLPI, Zabbix, Docker, automation scripts and self-hosted tools.
 
----
-
-## Objetivo
-
-Criar um assistente técnico capaz de auxiliar profissionais de TI em tarefas como:
-
-- Consultar documentação interna.
-- Apoiar análise de chamados.
-- Consultar informações de ativos e serviços.
-- Integrar dados de ferramentas como **GLPI**, **Zabbix** e **Grafana**.
-- Automatizar respostas e ações operacionais.
-- Disponibilizar atendimento interno via interfaces como Web, API ou Telegram.
+Currently building **Sentinela Local Agent**, a local AI assistant designed to support technical teams with diagnostics, documentation, monitoring and internal support workflows.
 
 ---
 
-## Principais recursos
+## Featured projects
 
-- Execução local/self-hosted.
-- Integração com modelos locais via **Ollama**.
-- Base documental com suporte a RAG.
-- API para consultas e automações.
-- Possibilidade de integração com GLPI.
-- Possibilidade de integração com Zabbix.
-- Fluxo de uso interno via Telegram para técnicos.
-- Foco em privacidade e redes restritas.
-- Documentação voltada para ambientes reais de infraestrutura.
+### 🛰️ Sentinela Local Agent
 
----
+Local AI assistant for IT infrastructure environments, integrating tools such as GLPI, Zabbix, Linux services and automation scripts.
 
-## Arquitetura proposta
+Repository: [SENTINELA-AI](https://github.com/lteodoro780/SENTINELA-AI)
 
-```text
-Usuário / Técnico
-      |
-      | Web UI / Telegram / API
-      v
-SENTINELA-AI
-      |
-      |-- Modelo local via Ollama
-      |-- Base documental / RAG
-      |-- API interna em Python/FastAPI
-      |-- Integração GLPI
-      |-- Integração Zabbix
-      |-- Dashboards e informações operacionais
-```
+### 🧪 Infra TI Labs
+
+Hands-on infrastructure labs, Linux experiments, monitoring, networking and automation studies.
+
+Repository: [infra-ti-labs](https://github.com/lteodoro780/infra-ti-labs)
+
+### ♻️ Vanguardeira Project
+
+Technology reuse project focused on transforming low-cost and repurposed hardware into functional Linux-based workstations.
+
+Repository: [vanguardeira-project](https://github.com/lteodoro780/vanguardeira-project)
+
+### 🧰 Hermes Security Portable
+
+Portable support and security toolkit focused on diagnostics, local execution and practical troubleshooting workflows.
+
+Repository: [hermes-security-portable](https://github.com/lteodoro780/hermes-security-portable)
 
 ---
 
-## Tecnologias utilizadas
+## Tech stack
 
-| Área | Tecnologias |
-|---|---|
-| IA local | Ollama, modelos locais, RAG |
-| Backend | Python, FastAPI |
-| Infraestrutura | Linux, Docker |
-| Monitoramento | Zabbix, Grafana |
-| ITSM / Chamados | GLPI |
-| Interface | Open WebUI, Telegram Bot, API HTTP |
-| Automação | Scripts, endpoints internos, integrações |
+<p align="left">
+  <img src="https://img.shields.io/badge/Linux-333?style=for-the-badge&logo=linux" />
+  <img src="https://img.shields.io/badge/Docker-333?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/Python-333?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/FastAPI-333?style=for-the-badge&logo=fastapi" />
+  <img src="https://img.shields.io/badge/Zabbix-333?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/GLPI-333?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Grafana-333?style=for-the-badge&logo=grafana" />
+  <img src="https://img.shields.io/badge/Ollama-333?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Local%20AI-333?style=for-the-badge" />
+</p>
 
----
-
-## Casos de uso
-
-### Suporte técnico interno
-
-O assistente pode ser usado para orientar técnicos em procedimentos, comandos, soluções conhecidas e documentação de ambiente.
-
-### Apoio a chamados
-
-Com integração ao GLPI, o projeto pode ajudar na consulta, análise e registro de soluções de chamados.
-
-### Monitoramento operacional
-
-Com integração ao Zabbix e Grafana, o assistente pode consultar alertas, hosts, disponibilidade e informações relevantes da infraestrutura.
-
-### Base de conhecimento privada
-
-Documentos internos podem ser utilizados como fonte de consulta sem depender de serviços externos.
+Linux • Docker • Python • FastAPI • Zabbix • GLPI • Grafana • Active Directory • Networking • Local AI • Ollama • Automation
 
 ---
 
-## Status do projeto
+## What I'm building
 
-Projeto em desenvolvimento e evolução contínua.
-
-### Já desenvolvido / em teste
-
-- Ambiente local com IA.
-- Estrutura inicial de assistente técnico.
-- Testes com bases documentais.
-- Testes de integração com ferramentas de infraestrutura.
-- Uso interno voltado a técnicos.
-
-### Próximos passos
-
-- Padronizar estrutura de API.
-- Melhorar documentação de instalação.
-- Criar exemplos de integração com GLPI.
-- Criar exemplos de integração com Zabbix.
-- Adicionar prints e diagramas sem dados sensíveis.
-- Criar fluxo de Telegram para uso técnico interno.
-- Separar documentação em arquivos dentro de `docs/`.
+- Local AI assistants for internal IT support.
+- Linux-based infrastructure labs.
+- Monitoring and automation workflows with Zabbix, GLPI and Grafana.
+- Practical documentation for real-world troubleshooting.
+- Reuse of low-cost hardware for educational and infrastructure projects.
 
 ---
 
-## Estrutura sugerida do projeto
-
-```text
-SENTINELA-AI/
-├── README.md
-├── app/
-│   ├── main.py
-│   ├── routes/
-│   ├── services/
-│   └── integrations/
-├── docs/
-│   ├── architecture.md
-│   ├── installation.md
-│   ├── glpi-integration.md
-│   ├── zabbix-integration.md
-│   ├── telegram-bot.md
-│   └── security-notes.md
-├── scripts/
-├── examples/
-└── docker-compose.yml
-```
-
----
-
-## Segurança e privacidade
-
-Este projeto é pensado para uso interno e controlado. Ao publicar prints, exemplos ou documentações, é importante remover ou mascarar:
-
-- IPs internos.
-- Hostnames reais.
-- Domínios corporativos.
-- Usuários e senhas.
-- Tokens de API.
-- Dados de chamados.
-- Nomes de servidores e ativos sensíveis.
-
----
-
-## Observação
-
-Este repositório faz parte de um laboratório pessoal/profissional de infraestrutura, automação e IA local. O objetivo é documentar o processo de aprendizado e desenvolvimento, incluindo testes, erros, correções e melhorias.
-
----
-
-## Autor
-
-**Luiz Teodoro**  
-Infraestrutura de TI • Linux • Automação • Monitoramento • IA Local
+## Contact
 
 - GitHub: [@lteodoro780](https://github.com/lteodoro780)
