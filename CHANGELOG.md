@@ -4,6 +4,20 @@ Todas as mudanças relevantes deste projeto serão documentadas neste arquivo.
 
 O formato segue a ideia do Keep a Changelog e o versionamento segue SemVer enquanto o projeto estiver em desenvolvimento inicial.
 
+## [0.2.1] - 2026-09-25
+
+### Corrigido
+
+- `deploy/compose.yaml` passou a ser a fonte única do deploy Docker Compose.
+- Nome do projeto Compose fixado como `sentinela-ai` para manter volumes previsíveis.
+- Scripts `start`, `stop`, `status`, `update`, `compose-up` e `compose-down` passaram a utilizar o Compose canônico.
+- Scripts agora funcionam independentemente do diretório atual de execução.
+- `deploy/.env` passou a ser carregado explicitamente quando presente.
+- Backup alinhado aos volumes do Compose canônico.
+- README e documentação de deploy atualizados para Docker Compose v2.
+- CI passa a validar o Compose usando `deploy/.env.example`.
+- Removido o `docker-compose.yml` legado da raiz para eliminar configuração duplicada.
+
 ## [0.2.0] - 2026-06-02
 
 ### Adicionado
