@@ -1,9 +1,18 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-echo "Updating SENTINELA AI containers..."
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+COMPOSE_FILE="${COMPOSE_FILE:-$REPO_ROOT/deploy/compose.yaml}"
+ENV_FILE="${ENV_FILE:-$REPO_ROOT/deploy/.env}"
 
-docker-compose pull
-docker-compose up -d
+compose_args=(-f "$COMPOSE_FILE")
+if [[ -f "$ENV_FILE" ]]; then
+  compose_args=(--env-file "$ENV_FILE" "${compose_args[@]}")
+fi
 
-echo "Update completed."
-docker ps
+echo "Atualizando os contêineres do SENTINELA AI..."
+docker compose "${compose_args[@]}" pull
+docker compose "${compose_args[@]}" up -d
+docker compose "${compose_args[@]}" ps
+echo "Atualização concluída."
