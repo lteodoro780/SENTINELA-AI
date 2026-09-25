@@ -34,7 +34,7 @@ A solução utiliza **Ollama** para executar modelos de linguagem na própria in
 ## Tecnologias
 
 - **Linux** — sistema recomendado para hospedagem.
-- **Docker e Docker Compose** — criação e gerenciamento dos serviços.
+- **Docker e Docker Compose v2** — criação e gerenciamento dos serviços.
 - **Ollama** — execução local dos modelos de IA.
 - **Open WebUI** — interface web para interação com os modelos.
 - **Shell Script** — instalação, configuração e automação.
@@ -60,14 +60,18 @@ Os serviços utilizam volumes persistentes para manter modelos, usuários e conf
 
 ```text
 SENTINELA-AI/
+├── deploy/
+│   ├── compose.yaml       # Fonte única do deploy Docker Compose
+│   └── .env.example      # Exemplo de configuração
 ├── docs/                 # Documentação técnica e guias
 ├── images/               # Imagens, diagramas e capturas de tela
-├── scripts/              # Scripts de instalação e automação
-├── docker-compose.yml    # Definição dos serviços principais
+├── scripts/              # Scripts de operação, atualização e backup
 ├── CHANGELOG.md          # Histórico de alterações
 ├── LICENSE               # Licença do projeto
 └── README.md             # Apresentação e instruções principais
 ```
+
+O arquivo **`deploy/compose.yaml` é a definição canônica do stack**. Scripts, documentação e CI devem apontar para ele.
 
 ## Requisitos
 
@@ -75,7 +79,7 @@ Antes de iniciar, tenha instalado:
 
 - Linux com suporte ao Docker.
 - Docker Engine.
-- Docker Compose.
+- Docker Compose v2 (`docker compose`).
 - Pelo menos 8 GB de RAM para modelos pequenos; modelos maiores exigem mais memória.
 - Espaço em disco suficiente para armazenar os modelos escolhidos.
 
@@ -90,16 +94,24 @@ git clone https://github.com/lteodoro780/SENTINELA-AI.git
 cd SENTINELA-AI
 ```
 
+Crie o arquivo de ambiente:
+
+```bash
+cp deploy/.env.example deploy/.env
+```
+
+Edite `deploy/.env` e troque, no mínimo, `WEBUI_SECRET_KEY` por uma chave forte.
+
 Inicie os serviços:
 
 ```bash
-docker compose up -d
+docker compose --env-file deploy/.env -f deploy/compose.yaml up -d
 ```
 
 Verifique os contêineres:
 
 ```bash
-docker compose ps
+docker compose --env-file deploy/.env -f deploy/compose.yaml ps
 ```
 
 Acesse a interface pelo navegador:
@@ -108,18 +120,25 @@ Acesse a interface pelo navegador:
 http://IP-DO-SERVIDOR:3000
 ```
 
+Também é possível usar:
+
+```bash
+./scripts/start.sh
+./scripts/status.sh
+```
+
 ## Baixando um modelo
 
 Exemplo com um modelo leve:
 
 ```bash
-docker exec -it ollama ollama pull qwen2.5:1.5b
+docker exec -it sentinela-ollama ollama pull qwen2.5:1.5b
 ```
 
 Para listar os modelos instalados:
 
 ```bash
-docker exec -it ollama ollama list
+docker exec -it sentinela-ollama ollama list
 ```
 
 Depois, selecione o modelo diretamente na interface do Open WebUI.
@@ -129,26 +148,37 @@ Depois, selecione o modelo diretamente na interface do Open WebUI.
 Parar os serviços:
 
 ```bash
-docker compose down
+./scripts/stop.sh
 ```
 
 Reiniciar os serviços:
 
 ```bash
-docker compose restart
+docker compose --env-file deploy/.env -f deploy/compose.yaml restart
 ```
 
 Acompanhar os logs:
 
 ```bash
-docker compose logs -f
+docker compose --env-file deploy/.env -f deploy/compose.yaml logs -f
 ```
 
 Atualizar as imagens dos contêineres:
 
 ```bash
-docker compose pull
-docker compose up -d
+./scripts/update.sh
+```
+
+Executar healthcheck:
+
+```bash
+./scripts/healthcheck.sh
+```
+
+Criar backup dos volumes:
+
+```bash
+./scripts/backup.sh
 ```
 
 ## Segurança
