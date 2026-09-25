@@ -1,6 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-echo "Stopping SENTINELA AI environment..."
-docker-compose down
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+COMPOSE_FILE="${COMPOSE_FILE:-$REPO_ROOT/deploy/compose.yaml}"
+ENV_FILE="${ENV_FILE:-$REPO_ROOT/deploy/.env}"
 
-echo "Environment stopped."
+compose_args=(-f "$COMPOSE_FILE")
+if [[ -f "$ENV_FILE" ]]; then
+  compose_args=(--env-file "$ENV_FILE" "${compose_args[@]}")
+fi
+
+echo "Parando o ambiente SENTINELA AI..."
+docker compose "${compose_args[@]}" down
+echo "Ambiente parado."
