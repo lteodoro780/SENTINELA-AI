@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-COMPOSE_FILE="${COMPOSE_FILE:-deploy/compose.yaml}"
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
+COMPOSE_FILE="${COMPOSE_FILE:-$REPO_ROOT/deploy/compose.yaml}"
+ENV_FILE="${ENV_FILE:-$REPO_ROOT/deploy/.env}"
 
-docker compose -f "$COMPOSE_FILE" down
+compose_args=(-f "$COMPOSE_FILE")
+if [[ -f "$ENV_FILE" ]]; then
+  compose_args=(--env-file "$ENV_FILE" "${compose_args[@]}")
+fi
+
+docker compose "${compose_args[@]}" down
