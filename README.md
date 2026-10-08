@@ -222,4 +222,4 @@ Este projeto é distribuído sob a licença MIT. Consulte o arquivo [LICENSE](LI
 
 ## Autor
 
-Desenvolvido por [Luis Teodoro](https://github.com/lteodoro780).
+Desenvolvido por [Luis O. Florencio](https://github.com/lteodoro780).
