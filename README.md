@@ -20,12 +20,6 @@ O **Sentinela AI** é um ambiente de inteligência artificial auto-hospedado, cr
 
 A solução utiliza **Ollama** para executar modelos de linguagem na própria infraestrutura e **Open WebUI** como interface de conversa. O projeto prioriza privacidade, baixo custo, controle dos dados e facilidade de implantação com Docker.
 
-## Capturas de tela
-
-![Open WebUI com o modelo Sentinela 1.5 respondendo sobre Active Directory](images/Screenshot_20260509_140237.png)
-
-*Open WebUI servindo o modelo localmente (Ollama), sem acesso à internet.*
-
 ## Principais recursos
 
 - Execução de modelos de IA localmente.
