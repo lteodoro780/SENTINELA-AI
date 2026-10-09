@@ -1,0 +1,38 @@
+name: Security checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  secret-scan:
+    name: Gitleaks history
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Scan Git history for secrets
+        run: |
+          docker run --rm -v "$PWD:/repo" -w /repo ghcr.io/gitleaks/gitleaks:v8.30.1 git --redact .
+
+  deployment-validation:
+    name: Shell and Compose validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+      - name: Check shell scripts
+        run: |
+          find scripts -type f -name '*.sh' -print0 | xargs -0 -r -n1 bash -n
+          find scripts -type f -name '*.sh' -print0 | xargs -0 -r shellcheck
+      - name: Validate Docker Compose
+        run: docker compose --env-file deploy/.env.example -f deploy/compose.yaml config --quiet
