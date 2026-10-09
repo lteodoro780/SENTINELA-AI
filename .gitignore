@@ -37,3 +37,15 @@ Thumbs.db
 secrets/
 tokens.json
 config.local.*
+
+# Additional credentials and private configuration
+*.pfx
+*.p8
+id_rsa
+id_ed25519
+credentials*.json
+secrets.json
+*.sqlite
+*.sqlite3
+*.db
+*.env.local
