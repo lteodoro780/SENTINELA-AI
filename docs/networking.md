@@ -32,7 +32,7 @@ http://SERVER-IP:3000
 Example:
 
 ```txt id="r8hxfx"
-http://192.168.100.10:3000
+http://192.0.2.10:3000
 ```
 
 ---
